@@ -4,7 +4,6 @@
 #include "clsScreen.h"
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
-#include <iomanip>
 using namespace std;
 
 class clsAddNewClientScreen : protected clsScreen
@@ -29,22 +28,22 @@ private:
         Client.PinCode = clsInputValidate::ReadString();
 
         cout << "Enter Account Balance: ";
-        Client.AccountBalance = clsInputValidate::ReadPositiveFloatNumber();
+        Client.AccountBalance = clsInputValidate::ReadPositiveFloatNumber("Enter a positive number: ");
     }
 
     static void _PrintClient(clsBankClient Client)
     {
         cout << "\nClient Card:";
-        cout << "\n___________________";
-        cout << "\nFirstName   : " << Client.FirstName;
-        cout << "\nLastName    : " << Client.LastName;
+        cout << "\n________________________";
+        cout << "\nFirst Name  : " << Client.FirstName;
+        cout << "\nLast Name   : " << Client.LastName;
         cout << "\nFull Name   : " << Client.FullName();
         cout << "\nEmail       : " << Client.Email;
         cout << "\nPhone       : " << Client.Phone;
         cout << "\nAcc. Number : " << Client.AccountNumber();
         cout << "\nPassword    : " << Client.PinCode;
         cout << "\nBalance     : " << Client.AccountBalance;
-        cout << "\n___________________\n";
+        cout << "\n________________________\n";
     }
 
 public:
@@ -93,4 +92,3 @@ public:
     }
 
 };
-
