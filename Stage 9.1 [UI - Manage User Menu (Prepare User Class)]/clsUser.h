@@ -72,7 +72,7 @@ private:
 		return vUsers;
 	}
 
-	static void _SaveUsersDataToFile(vector<clsUser> const & vClients)
+	static void _SaveUsersDataToFile(vector<clsUser> const & vUsers)
 	{
 		fstream MyFile;
 		MyFile.open("Users.txt", ios::out); //overwrite
@@ -81,7 +81,7 @@ private:
 
 		if (MyFile.is_open())
 		{
-			for (clsUser const& U : vClients)
+			for (clsUser const& U : vUsers)
 			{
 				if (U._MarkForDelete == false)
 				{
@@ -175,7 +175,7 @@ public:
 		return _Permissions;
 	}
 
-	__declspec(property(get = getPermissions, put = setPermissions)) float Permissions;
+	__declspec(property(get = getPermissions, put = setPermissions)) int Permissions;
 
 	static clsUser Find(string UserName)
 	{
@@ -270,7 +270,7 @@ public:
 		}
 	}
 
-	static clsUser GetAddNewClientObject(string UserName)
+	static clsUser GetAddNewUserObject(string UserName)
 	{
 		return clsUser(enMode::AddNewMode, "", "", "", "", UserName, "", 0);
 	}
@@ -294,7 +294,7 @@ public:
 		return false;
 	}
 
-	static vector<clsUser> GetClientsList()
+	static vector<clsUser> GetUsersList()
 	{
 		return _LoadUsersDataFromFile();
 	}
