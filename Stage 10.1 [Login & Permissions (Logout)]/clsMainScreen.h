@@ -78,7 +78,7 @@ private:
 		cout << "End Screen will be here...\n";
 	}
 
-    static void _Login()
+    static void _Logout()
     {
         CurrentUser = clsUser::Find("", "");
         //then it will go back to main function.
@@ -141,7 +141,7 @@ private:
         {
             system("cls");
            // _ShowExitScreen();
-            _Login();
+            _Logout();
             break;
         }
         }
