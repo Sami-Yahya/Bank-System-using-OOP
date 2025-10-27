@@ -45,6 +45,7 @@ private:
         } while (LoginFailed);
 
         clsMainScreen::ShowMainMenu();
+        return true;
 	}
 
 public:
