@@ -81,7 +81,7 @@ private:
 
     static void _ShowLoginRegisterScreen()
     {
-        clsLoginRegister::ShowUsersList();
+        clsLoginRegister::ShowLoginRegisterScreen();
     }
 
     static void _Logout()
@@ -185,3 +185,4 @@ public:
     }
 
 };
+
