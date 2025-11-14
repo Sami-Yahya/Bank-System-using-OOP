@@ -20,7 +20,7 @@ private:
 
 public:
 
-    static void ShowUsersList()
+    static void ShowLoginRegisterScreen()
     {
         vector<clsUser::stLoginRegisterRecord> vLoginRegisterRecord = clsUser::GetLoginRegisterList();
 
@@ -57,3 +57,4 @@ public:
     }
 
 };
+
